@@ -1,9 +1,11 @@
 package com.ultimaschool.java.clientes;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
 
-public class Cliente {
+public class ClienteBuilder {
 
     private String primeiroNome;
     private String nomeDoMeio;
@@ -17,8 +19,11 @@ public class Cliente {
     private String endereco;
     private String telefone;
 
-    public Cliente(String primeiroNome, String nomeDoMeio, String sobrenome, String cpf,
-                   String dataDeNascimento, String email, char genero, String endereco, String telefone) {
+    public ClienteBuilder() {
+    }
+
+    public ClienteBuilder(String primeiroNome, String nomeDoMeio, String sobrenome, String cpf,
+                          String dataDeNascimento, String email, char genero, String endereco, String telefone) {
         this.primeiroNome = primeiroNome;
         this.nomeDoMeio = nomeDoMeio;
         this.sobrenome = sobrenome;
@@ -169,7 +174,19 @@ public class Cliente {
                 " com idade de " + getIdadeAtual() +
                 ", e-mail " + getEmail() +
                 ", endereço " + getEndereco() +
-                "e telefone " + getTelefone();
+                " telefone " + getTelefone();
+    }
+
+    public String toStringIdentificacao(){
+        return "Os dados pessoais são: " + tratamentoGenero() + " " +getNomeCompleto() + ", com CPF " +
+                getCpf() + ", data de nascimento " + getDataDeNascimento() +
+                " com idade de " + getIdadeAtual();
+    }
+
+    public String toStringContatos(){
+        return "Os dados de contatos são: Email " + getEmail() +
+                ", endereco " + getEndereco() +
+                ", telefone " + getTelefone();
     }
 
 }
