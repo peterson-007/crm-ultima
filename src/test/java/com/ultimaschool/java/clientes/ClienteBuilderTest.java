@@ -11,7 +11,7 @@ class ClienteBuilderTest {
     private ClienteBuilder clienteBuilder2;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws Exception {
 
         clienteBuilder = new ClienteBuilder("Joana","Maria","Rocha","123.456.789-00",
                 "10/01/1993", "joana@gmail.com",'F',"Av. Brasil","(11 8888-8888)");
@@ -193,7 +193,7 @@ class ClienteBuilderTest {
 
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown() throws Exception {
         clienteBuilder = null;
         clienteBuilder2 = null;
     }
